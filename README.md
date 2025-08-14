@@ -19,7 +19,3 @@ Quero documentar todo o processo, desde o básico até ataques mais avançados.
 
 ---
 
-## 📂 Organização
-
-# red-team-studies
-Anotações e scripts da minha trilha de Red Team.
