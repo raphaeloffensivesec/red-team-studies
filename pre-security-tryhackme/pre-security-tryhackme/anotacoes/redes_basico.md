@@ -56,3 +56,30 @@ ip route        # rotas e gateway
 ping -c 4 1.1.1.1
 traceroute tryhackme.com
 dig tryhackme.com A +short
+```
+
+---
+## Comandos de Rede no Windows
+```
+## Ver informações de IP e interfaces
+```powershell
+ipconfig
+```
+
+## Testar conectividade
+```powershell
+ping tryhackme.com
+```
+
+## Ver rota até um destino
+```powershell
+tracert tryhackme.com
+```
+
+## Consultar DNS
+```powershell
+nslookup tryhackme.com
+```
+
+
+
