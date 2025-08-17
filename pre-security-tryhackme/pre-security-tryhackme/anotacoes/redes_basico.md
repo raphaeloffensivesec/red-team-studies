@@ -1,78 +1,58 @@
 # Redes – Fundamentos (TryHackMe Pre Security)
 
-Este documento reúne minhas anotações do módulo **Network Fundamentals** do TryHackMe (Pre Security Path).  
-O objetivo é consolidar os **conceitos essenciais de redes** que todo profissional de cibersegurança precisa dominar.
+Anotações do módulo **Network Fundamentals**. Foco em entendimento prático para pentest.
 
 ---
 
-## 1. Conceitos básicos de redes
-- **Rede**: conjunto de dispositivos interligados para compartilhar dados.
-- **LAN (Local Area Network)**: rede local, geralmente dentro de casa, escola ou empresa.
-- **WAN (Wide Area Network)**: conecta redes locais distantes, exemplo: a Internet.
-- **Endereço IP**: número que identifica cada dispositivo em uma rede.
-  - IPv4: formato `x.x.x.x` (ex.: `192.168.0.1`).
-  - IPv6: formato hexadecimal, mais longo (ex.: `2001:0db8::1`).
-- **Endereço privado**: usado em redes internas, não é acessível diretamente da internet.
-  - Faixas comuns: `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`.
-- **Gateway**: o “roteador de saída” que conecta a rede local à internet.
-- **DNS (Domain Name System)**: traduz nomes de domínio (`tryhackme.com`) para endereços IP.
+## Visão geral
+- **LAN vs WAN**: LAN = rede local (casa/empresa). WAN = interliga LANs (Internet).
+- **Dispositivo final** (host), **switch** (camada 2), **roteador** (caminho entre redes, camada 3).
 
 ---
 
-## 2. Protocolos importantes
-- **TCP (Transmission Control Protocol)**  
-  - Conexão orientada, garante entrega confiável.  
-  - Usado em: HTTP/HTTPS, SSH, FTP.  
-
-- **UDP (User Datagram Protocol)**  
-  - Não garante entrega, mas é mais rápido.  
-  - Usado em: streaming, jogos online, VoIP.  
-
-- **ICMP (Internet Control Message Protocol)**  
-  - Usado por ferramentas como `ping` e `traceroute`.  
+## Endereçamento IP e sub-redes
+- **IPv4**: `A.B.C.D` (0–255).  
+- **Privados**: `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`.  
+- **CIDR**: `/24` = 255.255.255.0 (256 endereços); `/16` = 255.255.0.0.
+- **Gateway padrão**: roteador que leva sua LAN para a Internet.
+- **Máscara** define o tamanho da rede; hosts fora da mesma rede precisam do **gateway**.
 
 ---
 
-## 3. Portas e serviços
-- Cada serviço na rede “ouve” em uma porta lógica. Exemplos:
-  - **22** → SSH  
-  - **80** → HTTP  
-  - **443** → HTTPS  
-  - **53** → DNS  
-  - **3389** → RDP (Remote Desktop)  
-
-Saber essas portas de cor é essencial para pentesting.
+## Protocolos de transporte (o que mais cai em pentest)
+- **TCP** (orientado à conexão): handshake 3 vias (SYN, SYN/ACK, ACK), confiável. Ex.: HTTP/HTTPS, SSH.
+- **UDP** (sem conexão): menor latência, sem garantia de entrega. Ex.: DNS, VoIP, jogos.
+- **ICMP**: mensagens de controle (usado por `ping` e `traceroute`).
 
 ---
 
-## 4. Ferramentas de diagnóstico
+## Portas e serviços (decorar as mais comuns)
+- **22** SSH · **80** HTTP · **443** HTTPS · **53** DNS · **25** SMTP · **110** POP3 · **143** IMAP · **3389** RDP · **445** SMB · **139** NetBIOS.
+> Pentest: portas ajudam a inferir serviços/tecnologias e a priorizar vetores.
+
+---
+
+## Resolução de nomes (DNS)
+- Transforma domínio → IP.
+- **Registros**: `A` (IPv4), `AAAA` (IPv6), `CNAME` (alias), `MX` (email), `NS` (autoridade).
+- Testes rápidos:
+  - Linux: `dig tryhackme.com A +short`  
+  - Windows: `nslookup tryhackme.com`
+
+---
+
+## Protocolos essenciais de camada 2/3
+- **ARP**: mapeia IP ↔ MAC na LAN. Cache: `arp -a`.
+- **DHCP**: distribui IP/máscara/gateway/DNS automaticamente (DORA: Discover, Offer, Request, Acknowledge).
+- **NAT/PAT**: traduz IPs privados para um IP público (roteador). PAT = várias conexões → 1 IP (com portas).
+
+---
+
+## Ferramentas de diagnóstico
 ### Linux
 ```bash
-# Mostrar interfaces de rede
-ip a
-
-# Mostrar rotas
-ip route
-
-# Testar conectividade
+ip a            # interfaces e IPs
+ip route        # rotas e gateway
 ping -c 4 1.1.1.1
-
-# Ver caminho até um destino
 traceroute tryhackme.com
-
-# Consultar DNS
-dig tryhackme.com
-
-### Windows
-
-# Mostrar interfaces
-ipconfig /all
-
-# Testar conectividade
-ping 1.1.1.1
-
-# Ver caminho até o destino
-tracert tryhackme.com
-
-# Consultar DNS
-nslookup tryhackme.com
+dig tryhackme.com A +short
