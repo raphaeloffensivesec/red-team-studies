@@ -1,63 +1,79 @@
-# 🪟 Windows Fundamentals – Anotações
+# 🪟 Windows Fundamentals – Anotações Completas
 
-Este documento reúne os principais conceitos e comandos vistos no módulo **Windows Fundamentals** do TryHackMe.  
-Serve como guia rápido de estudo e referência.
+Este documento reúne **todos os conceitos, comandos, exemplos práticos e boas práticas de segurança** do módulo Windows Fundamentals do TryHackMe.  
+Serve como guia de estudo, referência rápida e checklist para prática.
 
 ---
 
 ## 📂 Estrutura de Diretórios
 
-- `C:\` → raiz do sistema.
-- `C:\Windows` → arquivos principais do sistema operacional.
-- `C:\Users` → diretórios de cada usuário.
-- `C:\Program Files` → programas instalados (64 bits).
-- `C:\Program Files (x86)` → programas 32 bits.
-- `C:\Temp` ou `%TEMP%` → arquivos temporários.
+O Windows organiza seus arquivos em uma hierarquia que facilita administração e segurança.
 
-### Variáveis de ambiente
-- `%SystemRoot%` → normalmente `C:\Windows`.
-- `%USERPROFILE%` → pasta do usuário atual.
+- `C:\` → raiz do sistema.
+- `C:\Windows` → arquivos essenciais do sistema operacional.
+- `C:\Users` → diretórios de usuários.
+- `C:\Program Files` → programas instalados 64 bits.
+- `C:\Program Files (x86)` → programas 32 bits.
+- `%TEMP%` → arquivos temporários do usuário.
 - `%APPDATA%` → dados de aplicativos.
+- `%SystemRoot%` → normalmente `C:\Windows`.
+- `%USERPROFILE%` → pasta pessoal do usuário.
 - `%PATH%` → diretórios de execução de binários.
+
+**Dicas importantes:**
+- Evite alterar arquivos em `C:\Windows` sem necessidade.
+- Sempre use permissões administrativas para alterações críticas.
 
 ---
 
 ## 🖥️ Prompt de Comando (CMD)
 
-### Comandos básicos
-- `dir` → lista arquivos e pastas.
-- `cd` → navegar entre diretórios.
+O CMD é útil para tarefas rápidas e automação básica.
+
+### Comandos essenciais
+- `dir` → lista arquivos e pastas (com `/a` mostra ocultos).
+- `cd` → navega entre diretórios (`cd..` sobe um nível).
 - `cls` → limpa a tela.
 - `echo` → exibe mensagens.
-- `copy` / `move` / `del` → copiar, mover e excluir arquivos.
-- `mkdir` / `rmdir` → criar e remover diretórios.
+- `copy` / `move` / `del` → copiar, mover ou excluir arquivos.
+- `mkdir` / `rmdir` → criar ou remover diretórios.
 
-### Operadores úteis
+### Operadores
 - `>` → redireciona saída para um arquivo.  
   Ex: `dir > lista.txt`
-- `>>` → adiciona saída ao final de um arquivo.  
+- `>>` → adiciona ao final de um arquivo.  
   Ex: `echo teste >> notas.txt`
-- `|` → pipe (encadear comandos).  
+- `|` → pipe, encadeia comandos.  
   Ex: `dir | find "txt"`
+
+### Dicas
+- Sempre execute CMD como administrador para tarefas de rede ou sistema.
+- Use `/s` e `/q` com `rmdir` para remover pastas recursivamente sem confirmação.
 
 ---
 
 ## ⚡ PowerShell
 
-Mais poderoso que o CMD, suporta objetos e scripts.
+PowerShell é mais moderno, suporta objetos, automação e scripts.
 
-### Principais comandos
-- `Get-Command` → lista todos os comandos disponíveis.
-- `Get-Help <comando>` → exibe ajuda de um comando.
-- `Get-ChildItem` (alias: `ls`) → lista diretórios/arquivos.
-- `Set-Location` (alias: `cd`) → muda de diretório.
-- `Select-String` → busca em arquivos (equivalente ao `grep`).
-- `Get-Process` → lista processos em execução.
-- `Stop-Process -Id <pid>` → encerra processo.
+### Comandos básicos
+- `Get-Command` → lista comandos disponíveis.
+- `Get-Help <comando>` → exibe ajuda detalhada.
+- `Get-ChildItem` (`ls`) → lista arquivos e pastas.
+- `Set-Location` (`cd`) → muda de diretório.
+- `Select-String` → busca texto dentro de arquivos.
+- `Get-Process` → lista processos ativos.
+- `Stop-Process -Id <pid>` → encerra processos.
 - `Get-Service` → lista serviços.
-- `Start-Service <nome>` / `Stop-Service <nome>` → inicia ou para serviço.
+- `Start-Service <nome>` / `Stop-Service <nome>` → gerencia serviços.
 
-### Exemplo prático
+### Exemplos práticos
 ```powershell
-# Listar todos arquivos .txt dentro da pasta Users
-Get-ChildItem C:\Users -Recurse -Include *.txt
+# Listar todos arquivos .txt no diretório do usuário
+Get-ChildItem $env:USERPROFILE -Recurse -Include *.txt
+
+# Ver processos ordenados por uso de CPU
+Get-Process | Sort-Object CPU -Descending | Select-Object -First 10
+
+# Verificar portas abertas
+Get-NetTCPConnection | Where-Object { $_.State -eq "Listen" }
