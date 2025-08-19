@@ -1,4 +1,7 @@
-# Windows Fundamentals – Anotações
+
+---
+
+# 📝 Anotações – Windows Fundamentals
 
 ## 1. Estrutura de Diretórios
 - `C:\` – raiz do sistema.
@@ -37,4 +40,3 @@
 Exemplo:
 ```powershell
 Get-ChildItem C:\Users -Recurse -Include *.txt
-
