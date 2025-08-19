@@ -69,4 +69,185 @@ vim arquivo.txt          # editor avançado
 
 ## 🔹 6. Permissões de arquivos
 Cada arquivo tem dono, grupo e permissões:
+```
+-rwxr-xr--  1 user  group  1024 Aug 17  arquivo.sh
+```
 
+- **Tipos de permissão:**
+  - `r` → leitura
+  - `w` → escrita
+  - `x` → execução
+
+- **Mudando permissões:**
+```bash
+chmod 755 arquivo.sh   # rwx para dono, rx para grupo e outros
+chmod u+x script.sh    # adiciona execução para o dono
+```
+
+- **Mudando dono/grupo:**
+```bash
+chown user:group arquivo.txt
+```
+
+---
+
+## 🔹 7. Usuários e grupos
+- Usuário root = administrador.
+- Arquivo `/etc/passwd` → informações de usuários.
+- Arquivo `/etc/shadow` → senhas (hashes).
+
+Comandos:
+```bash
+whoami        # mostra usuário atual
+id            # mostra UID e GID
+adduser nome  # adiciona usuário
+passwd nome   # muda senha
+su - usuario  # troca de usuário
+sudo comando  # executa comando como root
+```
+
+---
+
+## 🔹 8. Processos e serviços
+- Cada programa rodando é um **processo**.
+- PID = Process ID.
+
+Comandos:
+```bash
+ps aux              # lista processos
+top                 # monitor em tempo real
+htop                # versão melhorada (se instalada)
+kill -9 PID         # encerra processo
+systemctl status    # mostra status do sistema
+systemctl start ssh # inicia serviço
+systemctl stop ssh  # para serviço
+```
+
+---
+
+## 🔹 9. Gerenciamento de pacotes
+Depende da distribuição:
+- **Debian/Ubuntu (APT):**
+```bash
+sudo apt update
+sudo apt install nmap
+sudo apt remove nmap
+```
+
+- **Arch Linux (Pacman):**
+```bash
+sudo pacman -Syu
+sudo pacman -S nmap
+sudo pacman -R nmap
+```
+
+- **Red Hat/CentOS (YUM/DNF):**
+```bash
+sudo yum install nmap
+sudo dnf install nmap
+```
+
+---
+
+## 🔹 10. Redirecionamento e Pipes
+- `>` → redireciona saída para arquivo (sobrescreve).
+- `>>` → redireciona saída para arquivo (acrescenta).
+- `<` → lê de um arquivo.
+- `|` → conecta saída de um comando na entrada de outro.
+
+Exemplos:
+```bash
+ls > lista.txt
+cat arquivo.txt | grep "erro"
+```
+
+---
+
+## 🔹 11. Variáveis e ambiente
+- Variáveis de ambiente → configuram comportamento do sistema.
+```bash
+echo $HOME
+echo $PATH
+export VAR=valor
+```
+
+---
+
+## 🔹 12. Arquivos importantes
+- `/etc/passwd` → informações de usuários.
+- `/etc/shadow` → senhas (hashes).
+- `/etc/hosts` → mapeamento manual de hosts.
+- `/etc/resolv.conf` → configuração de DNS.
+- `/var/log/` → logs do sistema.
+
+---
+
+## 🔹 13. Redes no Linux
+```bash
+ifconfig / ip a     # mostra interfaces
+ping 8.8.8.8        # testa conectividade
+netstat -tulnp      # mostra conexões e portas (se instalado)
+ss -tulnp           # substituto moderno do netstat
+```
+
+---
+
+## 🔹 14. Arquivos compactados
+```bash
+tar -cvf arquivo.tar pasta/       # cria tar
+tar -xvf arquivo.tar              # extrai tar
+gzip arquivo.txt                  # compacta gzip
+gunzip arquivo.txt.gz             # descompacta gzip
+```
+
+---
+
+## 🔹 15. Segurança básica
+- Evitar usar root para tarefas comuns.
+- Usar `sudo` em vez de `su`.
+- Definir permissões corretas em arquivos.
+- Monitorar `/var/log/auth.log` para login suspeito.
+- Usar `chmod` e `chown` corretamente.
+
+---
+
+## 🔹 16. Ferramentas úteis no Pentest
+- `nmap` → scanner de rede.
+- `tcpdump` → captura pacotes.
+- `wireshark` → análise gráfica de pacotes.
+- `netcat` (nc) → conexões manuais, backdoors.
+- `hydra` → força bruta de senhas.
+- `john` → quebra de hashes.
+
+---
+
+## 🔹 17. Exemplos práticos
+- Criando usuário e testando login:
+```bash
+sudo adduser teste
+su - teste
+```
+
+- Criando script simples:
+```bash
+#!/bin/bash
+echo "Hello, Linux!"
+```
+```bash
+chmod +x script.sh
+./script.sh
+```
+
+- Encerrando processo que travou:
+```bash
+ps aux | grep firefox
+kill -9 PID
+```
+
+---
+
+## 🔹 18. Linux em segurança ofensiva
+- Usado em **servidores** → alvo comum em ataques.
+- **Permissões mal configuradas** → privilege escalation.
+- **Logs** revelam informações sensíveis.
+- **Ferramentas de hacking** são otimizadas para Linux (Kali, Parrot, BlackArch).
