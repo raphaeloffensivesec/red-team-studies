@@ -251,3 +251,34 @@ kill -9 PID
 - **Permissões mal configuradas** → privilege escalation.
 - **Logs** revelam informações sensíveis.
 - **Ferramentas de hacking** são otimizadas para Linux (Kali, Parrot, BlackArch).
+
+# Linux Básico – Command Line (TryHackMe)
+
+## O que aprendi
+- Conceito de **CLI (Command Line Interface)** e diferença para GUI.
+- Navegação no sistema de arquivos:
+  - `pwd` → mostra diretório atual
+  - `ls` → lista arquivos
+  - `cd` → navega entre pastas
+- Manipulação de arquivos e diretórios:
+  - `touch arquivo.txt` → cria arquivo
+  - `mkdir pasta` → cria pasta
+  - `rm arquivo.txt` → remove arquivo
+  - `rm -r pasta/` → remove pasta recursivamente
+- Leitura de arquivos:
+  - `cat`, `less`, `head`, `tail`
+- Redirecionamento e pipes:
+  - `>` sobrescreve saída
+  - `>>` adiciona à saída
+  - `|` conecta comandos
+- Permissões básicas:
+  - `chmod` altera permissões
+  - `ls -l` visualiza permissões
+- Comandos úteis:
+  - `echo`, `whoami`, `man`, `history`, `clear`
+
+## Observações
+- CLI dá muito mais controle que GUI.  
+- Essencial para administração de sistemas e pentest.  
+- Esse módulo serviu de base para aprofundar em Linux Fundamentals.
+
