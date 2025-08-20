@@ -79,7 +79,7 @@ tar -czf backup.tar.gz /home/usuario/documentos
 echo "Backup concluído!"
 ```
 
-# 🪟 Windows CLI – Cyber Security 101 (TryHackMe)
+# 🪟 Windows CLI]
 
 ## 📌 Introdução
 A **linha de comando no Windows** pode ser usada via **CMD** ou **PowerShell**.  
