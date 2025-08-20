@@ -1,7 +1,8 @@
 # Progresso – Cyber Security 101
 
-| Data       | Sala/Tópico         | Status | Notas rápidas                                                    |
-|------------|---------------------|--------|------------------------------------------------------------------|
-| 2025-08-20 | Command Line Basics | ☑      | Navegação, manipulação de arquivos, permissões e redirecionamento|
+| Data       | Módulo                    | Status | Notas rápidas                                              |
+|------------|---------------------------|--------|------------------------------------------------------------|
+| 2025-08-20 | Command Line (Windows/Linux) | ☑   | Navegação, arquivos, processos, rede, scripts básicos       |
+| 2025-08-20 | Networking                | ☑      | IP, TCP/UDP, portas, ICMP, traceroute, netcat, ferramentas |
 
-Legenda: **☐** a fazer · **◐** em andamento · **☑** concluído
+Legenda: ☐ a fazer · ◐ em andamento · ☑ concluído
