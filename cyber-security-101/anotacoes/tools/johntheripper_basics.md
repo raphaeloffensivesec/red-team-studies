@@ -24,3 +24,13 @@ john --show hashes.txt
 
 # Rodar ataque de força bruta
 john --incremental hashes.txt
+```
+Opções importantes:
+- **wordlist=<arquivo>** → define a lista de palavras para ataque de dicionário.
+- **rules** → aplica regras de mutação à wordlist (ex.: adicionar números, trocar letras).
+- **incremental** → modo de ataque por força bruta otimizado.
+- **format=<tipo>** → especifica o tipo de hash (ex.: md5, sha256, des).
+- **show** → mostra senhas quebradas de um arquivo de hashes.
+
+# Conclusão
+John the Ripper é essencial para avaliar a robustez de senhas e reforçar políticas de autenticação. Com preparação correta dos hashes, escolha apropriada de formato, wordlists + regras e monitoramento de sessão, você obtém resultados eficientes e reprodutíveis para auditorias profissionais.
