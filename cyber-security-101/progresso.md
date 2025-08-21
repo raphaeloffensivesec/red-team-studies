@@ -8,3 +8,4 @@
 | 2025-08-21 | Tools – Tcpdump         | ☑      | Captura CLI, filtros básicos, exportação para análise              |
 | 2025-08-21 | Tools – Nmap            | ☑      | Varredura de hosts, portas, protocolos, banner grabbing            |
 | 2025-08-22 | Cryptography            | ☑      | Conceitos de cifra, hashing, simétrica vs assimétrica, SSL/TLS      |
+Legenda: ☐ a fazer · ◐ em andamento · ☑ concluído
