@@ -5,21 +5,41 @@ Este documento reúne minhas anotações sobre as principais ferramentas de **De
 ---
 
 ## 1. CyberChef: The Basics
+
 ### O que é
-- Ferramenta web interativa chamada de "Swiss Army Knife for Data".
-- Utilizada para análise e transformação de dados.
-- Interface baseada em drag-and-drop de operações.
+- Ferramenta open-source desenvolvida pela GCHQ (inteligência britânica).
+- Conhecida como “Swiss Army Knife for Data”.
+- Funciona diretamente no navegador (online ou offline).
+- Interface gráfica com suporte a **pipelines de operações**.
 
 ### Funcionalidades principais
-- Conversões de codificação (Base64, Hex, ASCII).
-- Operações criptográficas (hashes, ciphers).
-- Análise forense (extração de strings, decodificação de payloads).
-- Manipulação de dados em formato binário, texto e JSON.
+- **Conversões**: Base64, Hex, ASCII, URL encoding/decoding.
+- **Criptografia e Hashing**: AES, DES, RC4, MD5, SHA1, SHA256, etc.
+- **Compressão e Descompressão**: Gzip, Bzip2, Base85, etc.
+- **Análise forense**: extração de strings, detecção de headers de arquivos.
+- **Regex**: busca, substituição e manipulação de dados textuais.
+- **Visualização**: conversão de bytes em imagens, tabelas, JSON, etc.
 
 ### Casos de uso
-- Decodificar cargas de malware.
-- Converter entre formatos durante análise.
-- Auxiliar em engenharia reversa.
+1. Decodificação de payloads em **Base64**.
+2. Extração de dados escondidos em imagens ou binários.
+3. Construção de pipelines automáticos de conversão + compressão + decodificação.
+4. Manipulação rápida de malware scripts ofuscados.
+
+### Exemplo prático
+- Receber um payload em **Base64**:
+  - Input: string codificada.
+  - Operações: `From Base64` → `Render Image`.
+  - Output: exibe imagem embutida.
+
+- Pipeline útil:
+  - `From Hex` → `Gunzip` → `Strings`  
+  - Permite analisar binários comprimidos e extrair conteúdo legível.
+
+### Instalação / Uso
+- Versão online: [CyberChef Online](https://gchq.github.io/CyberChef)
+- Versão local (para OPSEC):  
+  - Baixar release do GitHub e abrir `index.html` no navegador.
 
 ---
 
