@@ -35,7 +35,7 @@ sqlmap -u "http://site.com/page.php?id=1" --dump -D <banco> -T <tabela>
 ```bash
 sqlmap -u "http://site.com/page.php?id=1" --cookie="PHPSESSID=12345"
 ```
---cookie → permite usar sessões autenticadas.
+`--cookie` → permite usar sessões autenticadas.
 ```bash
 sqlmap -u "http://site.com/page.php?id=1" --auth-type=basic --auth-cred="user:pass"
 ```
