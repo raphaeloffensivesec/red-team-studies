@@ -1,4 +1,4 @@
-# 📘 Cybersecurity 101 – Security Solutions Notes
+# Cybersecurity 101 – Security Solutions Notes
 
 Este documento reúne minhas anotações sobre os principais **Security Solutions** estudados no módulo **Cybersecurity 101**.  
 Organizado de forma clara, para posterior consulta e estudo contínuo.
@@ -6,7 +6,7 @@ Organizado de forma clara, para posterior consulta e estudo contínuo.
 ---
 
 ## 🔹 1. Introduction to SIEM
-### ✅ O que é SIEM (Security Information and Event Management)
+### O que é SIEM (Security Information and Event Management)
 - **SIEM** combina **coleta, correlação, monitoramento e análise** de eventos de segurança.
 - Centraliza logs de:
   - Firewalls
@@ -15,14 +15,14 @@ Organizado de forma clara, para posterior consulta e estudo contínuo.
   - Aplicações críticas
 - Permite **detecção de ameaças em tempo real** e **resposta a incidentes**.
 
-### 📊 Funcionalidades principais
+### Funcionalidades principais
 1. **Coleta e agregação de logs** → unifica dados de diferentes dispositivos.
 2. **Correlação de eventos** → identifica padrões suspeitos.
 3. **Alertas automáticos** → gera notificações em tempo real.
 4. **Dashboards e relatórios** → visibilidade clara do ambiente.
 5. **Investigação forense** → armazenamento histórico de eventos.
 
-### 🛠 Exemplos de SIEM
+### Exemplos de SIEM
 - Splunk
 - IBM QRadar
 - Elastic SIEM
@@ -31,11 +31,11 @@ Organizado de forma clara, para posterior consulta e estudo contínuo.
 ---
 
 ## 🔹 2. Firewall Fundamentals
-### ✅ O que é um Firewall
+### O que é um Firewall
 - Dispositivo ou software que controla **tráfego de rede** com base em regras pré-definidas.
 - Atua como **primeira barreira** entre rede interna e externa.
 
-### 🔑 Tipos de Firewall
+### Tipos de Firewall
 1. **Packet Filtering Firewall**
    - Analisa pacotes com base em **IP, porta e protocolo**.
    - Rápido, mas básico.
@@ -51,7 +51,7 @@ Organizado de forma clara, para posterior consulta e estudo contínuo.
      - Filtragem avançada
      - Controle de aplicações
 
-### 🔐 Funções principais
+### Funções principais
 - Prevenção de acessos não autorizados.
 - Segmentação de rede.
 - Definição de regras de entrada e saída.
@@ -59,11 +59,11 @@ Organizado de forma clara, para posterior consulta e estudo contínuo.
 ---
 
 ## 🔹 3. IDS Fundamentals
-### ✅ O que é IDS (Intrusion Detection System)
+### O que é IDS (Intrusion Detection System)
 - Sistema que **monitora tráfego de rede** ou atividades em hosts.
 - Objetivo: **detectar possíveis intrusões**.
 
-### 📊 Tipos de IDS
+### Tipos de IDS
 1. **NIDS (Network-based IDS)**
    - Analisa tráfego em tempo real.
    - Detecta ataques de rede (scan, DoS, exploits).
@@ -83,22 +83,29 @@ Organizado de forma clara, para posterior consulta e estudo contínuo.
 ---
 
 ## 🔹 4. Vulnerability Scanner Overview
-### ✅ O que é um Vulnerability Scanner
+###  O que é um Vulnerability Scanner
 - Ferramenta que **analisa sistemas e redes** em busca de falhas de segurança.
 - **Identifica vulnerabilidades** antes que sejam exploradas.
 
-### 📊 Funções principais
+### Funções principais
 - **Mapeamento da rede**.
 - **Identificação de serviços e versões**.
 - **Detecção de vulnerabilidades conhecidas** (CVEs).
 - **Relatórios de risco** com recomendações de correção.
 
-### 🛠 Exemplos de Scanners
+### Exemplos de Scanners
 - Nessus
 - OpenVAS
 - Qualys
 - Nexpose
 
-### 🔑 Diferença para Pentest
+### Diferença para Pentest
 - **Scanner**: identifica falhas automaticamente.
 - **Pentest**: envolve exploração manual para validar riscos.
+
+# Conclusão
+Com esse módulo de **Security Solutions** aprendi:
+- Como **SIEM** centraliza e correlaciona eventos.
+- O papel dos **Firewalls** na proteção de redes.
+- Como os **IDS** detectam intrusões.
+- A importância dos **Scanners de vulnerabilidades** para prevenção.
