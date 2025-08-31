@@ -1,20 +1,28 @@
-# 1. Introduction to Cyber Security ✅
+# 1. Introdução à Cibersegurança 
 
-### O que aprendi:
-- O que é **Cibersegurança** e por que é importante.
-- Diferença entre **Hacking Ético** e **Hacking Malicioso**.
-- O conceito de **CIA Triad**:
-  - **Confidencialidade**: manter dados privados.
-  - **Integridade**: garantir que dados não sejam alterados sem permissão.
-  - **Disponibilidade**: garantir que serviços e dados estejam acessíveis.
-- Áreas de atuação:
-  - **Red Team** → ataque.
-  - **Blue Team** → defesa.
-  - **Purple Team** → integração entre os dois.
-- Papéis na área:
-  - Pentester, SOC Analyst, Malware Analyst, Threat Hunter, CISO, etc.
+### Conceitos principais:
+- **O que é Cibersegurança:** proteção de sistemas, redes e dados contra ataques.
+- **CIA Triad:**
+  - **Confidencialidade** → manter dados acessíveis apenas a quem tem permissão.
+  - **Integridade** → garantir que informações não sejam alteradas sem autorização.
+  - **Disponibilidade** → sistemas e dados sempre acessíveis para quem precisa.
+- **Diferença entre Hackers:**
+  - **White Hat** → hackers éticos.
+  - **Black Hat** → hackers maliciosos.
+  - **Grey Hat** → ficam no meio-termo.
+- **Áreas de atuação:**
+  - Red Team (ataque).
+  - Blue Team (defesa).
+  - Purple Team (colaboração entre ataque e defesa).
 
-### Ferramentas/Conceitos vistos:
-- VPN da TryHackMe para acesso aos laboratórios.
-- Máquinas virtuais vs Máquinas na nuvem.
-- Noções básicas de como os ataques e defesas acontecem.
+### Papéis e carreiras:
+- Pentester (teste de intrusão).
+- SOC Analyst (monitoramento em tempo real).
+- Malware Analyst (engenharia reversa).
+- Threat Hunter (caçador de ameaças).
+- CISO (gestão de segurança).
+
+### Ferramentas e fundamentos aprendidos:
+- Configuração e uso da VPN da TryHackMe para acesso aos laboratórios.
+- Conceitos de máquinas virtuais (VMs) vs máquinas provisionadas na nuvem.
+- Diferença entre testes em ambientes controlados vs sistemas reais.
