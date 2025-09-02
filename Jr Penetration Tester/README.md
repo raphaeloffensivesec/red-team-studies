@@ -7,13 +7,13 @@ Estou registrando o que aprendi, ferramentas utilizadas e walkthroughs das salas
 - [x] Introdução à Cibersegurança
 - [x] Introdução ao Pentesting
 - [x] Introdução ao Web Hacking
-- [ ] Fundamentos de Rede
-- [ ] Linux
-- [ ] Windows
-- [ ] Ferramentas de Pentesting
-- [ ] Exploração
-- [ ] Privilege Escalation
-- [ ] Prática de Pentesting
+- [x] Fundamentos de Rede
+- [x] Linux
+- [x] Windows
+- [x] Ferramentas de Pentesting
+- [x] Exploração
+- [x] Privilege Escalation
+- [x] Prática de Pentesting
 
 ## Estrutura
 Cada pasta contém resumos, anotações e walkthroughs das salas que completei.
